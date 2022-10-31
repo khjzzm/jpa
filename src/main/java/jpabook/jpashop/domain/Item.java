@@ -3,6 +3,7 @@ package jpabook.jpashop.domain;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -21,7 +22,7 @@ public abstract class Item extends BaseEntity{
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -29,7 +30,7 @@ public abstract class Item extends BaseEntity{
         this.id = id;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
@@ -37,7 +38,7 @@ public abstract class Item extends BaseEntity{
         this.name = name;
     }
 
-    public int price() {
+    public int getPrice() {
         return price;
     }
 
@@ -45,11 +46,19 @@ public abstract class Item extends BaseEntity{
         this.price = price;
     }
 
-    public int stockQuantity() {
+    public int getStockQuantity() {
         return stockQuantity;
     }
 
     public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }

@@ -1,7 +1,5 @@
 package jpabook.jpashop.domain;
 
-import org.aspectj.weaver.ast.Or;
-
 import javax.persistence.*;
 
 @Entity
@@ -28,12 +26,12 @@ public class OrderItem {
     private int orderPrice;
     private int count;
 
-    public Item getItem() {
-        return item;
+    public Long getId() {
+        return id;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Order getOrder() {
@@ -44,31 +42,15 @@ public class OrderItem {
         this.order = order;
     }
 
-    public Long id() {
-        return id;
+    public Item getItem() {
+        return item;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setItem(Item item) {
+        this.item = item;
     }
-//
-//    public Long orderId() {
-//        return orderId;
-//    }
-//
-//    public void setOrderId(Long orderId) {
-//        this.orderId = orderId;
-//    }
-//
-//    public Long itemId() {
-//        return itemId;
-//    }
-//
-//    public void setItemId(Long itemId) {
-//        this.itemId = itemId;
-//    }
 
-    public int orderPrice() {
+    public int getOrderPrice() {
         return orderPrice;
     }
 
@@ -76,7 +58,7 @@ public class OrderItem {
         this.orderPrice = orderPrice;
     }
 
-    public int count() {
+    public int getCount() {
         return count;
     }
 
